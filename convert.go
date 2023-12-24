@@ -19,8 +19,8 @@ func ConvertAll(args *Args) error {
 		if err != nil {
 			return err
 		}
-		// print markdown
-		fmt.Println(md)
+
+		os.WriteFile(strings.Replace(file, ".csv", ".md", -1), []byte(md), 0644)
 	}
 	return nil
 }
